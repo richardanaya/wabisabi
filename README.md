@@ -4,8 +4,6 @@ Elegant colors for truecolor terminals.
 
 # Art
 
-![ukiyoe_portland](https://user-images.githubusercontent.com/294042/181436102-fdef0292-2170-4b5f-9779-de3c4a22ce4c.png)
-
 # License
 
 This project is licensed under either of
