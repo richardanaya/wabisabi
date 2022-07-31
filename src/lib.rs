@@ -1,4 +1,4 @@
-use rand::Rng;
+use const_random::const_random;
 
 pub struct Color {
     pub name: &'static str,
@@ -52,9 +52,9 @@ pub const ISABELLA_COLOR: Color = Color {
     rgb: 0x9a732F,
 };
 
-pub fn pick_two_colors() -> &'static (Color, Color) {
-    let mut rng = rand::thread_rng();
-    let num_pairs = PAIRS.len();
-    let pair_index = rng.gen::<f64>() * num_pairs as f64;
-    &PAIRS[pair_index as usize]
+pub const fn pick_two_colors() -> &'static (Color, Color) {
+    const MY_RANDOM_NUMBER: u16 = const_random!(u16);
+    let max_u16 = u16::max_value();
+    let index = (PAIRS.len() * MY_RANDOM_NUMBER as usize) / max_u16 as usize;
+    &PAIRS[index]
 }
