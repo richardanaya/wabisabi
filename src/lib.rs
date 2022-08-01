@@ -52,7 +52,9 @@ pub const ISABELLA_COLOR: Color = Color {
     rgb: 0x9a732F,
 };
 
-pub const fn pick_two_colors() -> &'static (Color, Color) {
+pub type ColorPair = &'static (Color, Color);
+
+pub const fn pick_two_colors() -> ColorPair {
     const MY_RANDOM_NUMBER: u16 = const_random!(u16);
     let max_u16 = u16::max_value();
     let index = (PAIRS.len() * MY_RANDOM_NUMBER as usize) / max_u16 as usize;
